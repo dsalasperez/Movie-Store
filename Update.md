@@ -5,7 +5,8 @@ March 9, 2023
 
   ## Photographic evidence of the product backlog delivered and a summary of Sprints.
 
-## 1Tools Used
+## 1 
+Tools Used
 -	VMWare Workstation Pro, SSMS, SSRS, VS
 -	Windows Server 2022, SQL Server, DC, DNS, AD
 
@@ -216,5 +217,5 @@ This is it. It is a long process, but this is the right way to set it up with a 
 ## 2
 https://docs.google.com/spreadsheets/d/1u5XJ4MzHy3MJsqE2SozMDI7P8lz4wBUvd0Zbgft36Fc/edit?usp=sharing
 
-##3 
+## 3 
 Retrospective experience within the project sprints.
