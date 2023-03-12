@@ -1,9 +1,28 @@
+David Salas Perez
+Chris Brooks
+IS470
+March 9, 2023
 
-  # Photographic evidence of the product backlog delivered and a summary of Sprint 2.
+  # Photographic evidence of the product backlog delivered and a summary of Sprints.
+
+Tools Used
+-	VMWare Workstation Pro, SSMS, SSRS, VS
+-	Windows Server 2022, SQL Server, DC, DNS, AD
+
+Progamming Languages
+- SQL
+
+Systems DNS Hosts
+- VM-DC1, VM-SQL1, SQLServerDB, VM-DEV
+- 
+![image](https://user-images.githubusercontent.com/125078009/224527416-ee53a95c-a733-493c-941d-7855950806cf.png)
+![image](https://user-images.githubusercontent.com/125078009/224527410-1f7517af-c6cd-4b05-995a-7c70a911a35a.png)
+![image](https://user-images.githubusercontent.com/125078009/224527431-61712e8d-e0cf-4d9b-8f22-e3cedf0dcf18.png)
 
 Created a windows server 2022 VM in VMWare VM-DC1 to promote to domain controller.
 Created VM-SQL1 to install SQL server, SSMS and SSRS on it and add a db instance. 
 Installed SQL Server 2022 to setup the accounts, instance, and dependencies.
+![image](https://user-images.githubusercontent.com/125078009/224527416-ee53a95c-a733-493c-941d-7855950806cf.png)
 Added ISDev domain    
 Finalized 
 Then verified the service as a server in sql server configuration manager. You can see I had created two instances one default SQLEXPRESS and the other ISWOU
@@ -25,38 +44,49 @@ Now the Web Service URL must be established before the Web Portal URL. TCP Port 
 In Web Portal URL I clicked apply and ensure the process is successfull  
 I used the default directories for both web service and portal
 Now I need to test both web links. Therefore, I initiated them to ensure I can see a connection and typed the admin password which is the DC1 admins password since VM-SQL1 is in the domain. However, once I setup and delegate access permissions then I could log in to SSRS or use the web interface as another user with less access. 
-
 The administrator account is to apply or remove access where needed for admins to use. In this case since I am doing this project, I am using domain admin to not bottleneck my movement.  
-
 Setup Windows 10 Education VM with Visual Studio Enterprise 2022 
-
 Install SQL Server Data Tools in Visual Studio in the W10 host. 
-
 Setup connections in VS to SSRS database reports then apply configuration properties.  
-
 Open VS and start a Report Server Project
-
 Right click on Reports and select New Item  
-
 Then Select Report
-
 Right click on Data Sources and Add Data Source  
-
 I named it ISProjectDB then select Build on the lower right
-
 Data Source is Microsoft SQL Server, Server name is VM-SQL1 (I created it in the SQL server previously) 
-
 Then select a database to connect to using SQL Server Authentication which is the sa account and password
-
 Once authenticated we can view the databases and I selected VideoStoreDB  
-
 Test connection to make sure it succeeded then press ok, ok 
-
 Now we can run a small test before we begin a web report.
-
 Add a dataset and select Use a dataset embedded in my report and make sure it is the ISProjectDB data source  
 
 Then go to Query Designer to add code.
+I create an easy SELECT SQL query to run.  
+In query designer when I add “SELECT * FROM Movie” it will inset all the column titles. Then insert those values to the dataset like so
+It is working! Let us push this to the ssrs server! Before that I must add a parameter and table in order for a user or myself have the ability to search for movies on the web from any computer as long as it is in the domain, has access or permissions to the server, even across a vpn if it is setup that way.
+Right click on the white space to add a table.  
+I added a title and now I just need to add the values I want the query to pull.  
+Let’s go with Movie title, vhs and dvd price.  
+Also, we can add expressions for the text box, we can add expressions anywhere like header and footer to show page numbers or the same title across different pages. For now, I just want to keep it simple.
+Under parameters right click and add a new parameter then named it Movie and prompt it for Search for Movies  
+However, when I ask it to pull for values, it lists many values but I can only select one. The reason for that is because I only had one dataset called Movies with many values. 
+I have to create a new dataset and named it SearchMovies  
+Included a simple search for movies. 
+In the Movie parameter now, I’ve selected one value to return titles  
+Next in Preview mode, I can search for movies! Here is the list. 
+I selected the movie titled “Into the Wild” and view the report  
+Impressive! One thing to not forget to avoid displaying a full list even after selecting one value is to include the parameter for the query in the dataset  
+One last thing before I deploy it is to add a Description within the Report Properties  
+Now for the great moment! Push this out to development or test.
+Save all files first. Then I went back to the SSRS server which is the SQL virtual machine. To gather the URL
+  
+Then we also get the file directory where this report will be deployed to  
+I right clicked on ISProject the solution for the report. Then changed the TaretServerURL and TargetReportFolder to match what I had setup in VM-SQL1
+I clicked OK and now right clicked on the report (changed the name to MovieList)  
+Then selected Deploy.
+If we look at the SSRS web we can now see the data that was deployed  
+This is it. It is a long process, but this is the right way to set it up with a domain, the VMs separated not in the DC. Also, setting up security settings and configuring access. There is much more to do with it like setting up GitHub in VS and a repository with a dev, test, and prod branch. It can also be used with DevOps.
+
 
 
     Updated product burn-down chart showing two data points; backlog to capacity breakdown and work reduction.
