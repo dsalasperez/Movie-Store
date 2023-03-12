@@ -1,11 +1,8 @@
-### Movie Database Query Report Online Project Charter
+# Movie Database Query Report Online Project Charter
 
 ## Project name: SSRS Movie Report
 ## Project manager: David Salas Perez
 ## Last revision date: 3/11/2023
-
-Who is the point of contact for this project?
-Last revision date
 
 ## Project purpose statement: The purpose of this project is for employees to search up movies from a report.
 
@@ -37,6 +34,6 @@ Last revision date
 - On premise capacity and cloud for db hosting
 - A Student or a team of students
 
-## Stakeholders and approves
+# Stakeholders and approves
 - Instructor: Chris Brooks
 - Approvers: Chris Brooks and Ted Beers
