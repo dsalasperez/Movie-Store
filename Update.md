@@ -63,6 +63,4 @@ Then go to Query Designer to add code.
 
 https://docs.google.com/spreadsheets/d/1u5XJ4MzHy3MJsqE2SozMDI7P8lz4wBUvd0Zbgft36Fc/edit?usp=sharing
 
-    Conduct a personal project retrospective as a journal entry, using tips you've learned from the text and this course.
-
-Keep sprints in check and view stastics in the burn down chart.
+##Retrospective experience within the project sprints.
