@@ -1,12 +1,12 @@
 # Movie Database Query Report Online Project Charter
 
-## Project name: SSRS Movie Report
-## Project manager: David Salas Perez
-## Last revision date: 3/11/2023
+### Project name: SSRS Movie Report
+### Project manager: David Salas Perez
+### Last revision date: 3/11/2023
 
-## Project purpose statement: The purpose of this project is for employees to search up movies from a report.
+### Project purpose statement: The purpose of this project is for employees to search up movies from a report.
 
-## Project objectives: To reduce customer wait line times and improve business margins.
+### Project objectives: To reduce customer wait line times and improve business margins.
 
 ## --------------------------------------------------------------------------------------
 
